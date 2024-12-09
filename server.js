@@ -4,7 +4,9 @@
  *******************************************/
 
 var express = require("express");
+const helmet = require("helmet");
 var app = express();
+app.use(helmet.hidePoweredBy());
 app.disable("x-powered-by");
 var fs = require("fs");
 var path = require("path");
