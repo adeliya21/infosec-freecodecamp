@@ -8,7 +8,7 @@ app.use(helmet.noSniff()); // This sets the X-Content-Type-Options header to nos
 app.use(helmet.ieNoOpen()); // This sets the X-Download-Options header to noopen, which prevents Internet Explorer from executing HTML downloads (by default) in context of your trusted site.
 timeInSeconds = 90*24*60*60; // 90 days in seconds
 app.use(helmet.hsts({maxAge: timeInSeconds, fordce: true})); // This sets the Header Strict-Transport-Security (HSTS) to tell the browsers to use HTTPS for the future requests in a specified amount of time after initial request - against protocol downgrade attacks and cookie hijacking.
-
+app.use(helmet.dnsPrefetchControl()); // This disables DNS prefetching, at the cost of a performance penalty.
 
 
 
