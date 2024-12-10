@@ -13,7 +13,7 @@ app.use(helmet.noCache()); // This is useful when you are releasing an update fo
 app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"],
-    scriptSrc: ['self', 'trusted-cdn.com']
+    scriptSrc: ["'self'", 'trusted-cdn.com']
   }
 })) // This cinfigures Content Security Policy (CSP) that can help prevent the injection of anything unintended into your page by defining an allowed list of content sources which are trusted (scripts, stylesheets, fonts, frames, media, and so on...) - against XSS, tracking, 
 // By default, directives are wide open, so it’s important to set the defaultSrc directive as a fallback. Helmet supports both defaultSrc and default-src naming styles. The fallback applies for most of the unspecified directives.
