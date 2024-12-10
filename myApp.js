@@ -1,8 +1,8 @@
 const express = require('express');
 const helmet = require('helmet');
 const app = express();
-app.use(helmet.hidePoweredBy());
-
+app.use(helmet.hidePoweredBy()); // This hides the tech used to build web - Express.
+app.use(helmet.frameguard({action: 'deny'})); // This sets X-Frame-Option header set to deny - against click jacking.
 
 
 
